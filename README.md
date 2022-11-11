@@ -1,14 +1,14 @@
 # EASNKRSCHECKER
-Telegram bot ea IT SNKRS checker.
+## Telegram bot ea IT SNKRS checker.
 
-Install libraries
-
+### Install libraries python
+```
 pip install -r requirements.txt
+```
+### Edit TOKEN BOT on main.py 
 
-Edit TOKEN BOT on main.py 
-
-run program
-
+### Run program
+```
 python3 main.py
-
-Enjoy :)
+```
+### Enjoy :)
