@@ -35,6 +35,7 @@ def ea_us():
     url  = "https://api.nike.com/product_feed/threads/v2/?anchor=1&count=100&filter=marketplace%28US%29&filter=language%28en%29&filter=inStock%28false%29&filter=productInfo.merchPrice.discounted%28false%29&filter=channelId%28010794e5-35fe-4e32-aaff-cd2c74f89d61%29&filter=exclusiveAccess%28true%2Cfalse%29&fields=active&fields=id&fields=lastFetchTime&fields=productInfo&fields=publishedContent.nodes&fields=publishedContent.properties.coverCard&fields=publishedContent.properties.productCard&fields=publishedContent.properties.products&fields=publishedContent.properties.publish.collections&fields=publishedContent.properties.relatedThreads&fields=publishedContent.properties.seo&fields=publishedContent.properties.threadType&fields=publishedContent.properties.custom"
     items = []
     first = 0
+    dataus = 0
     sizes = ''
     html = rq.get(url=url, timeout=20, verify=False, headers=headers) # add proxies=proxy for enable proxy
     output = json.loads(html.text)
@@ -61,13 +62,16 @@ def ea_us():
                         else:
                             if s['id'] == k['id']:
                                 sizes += '\n' + str(s['nikeSize']) + ': ' + str(k['level'])
-                dataus = f"⚠ ULTIMO EA CARICATO : {title}\n{url}\n{img}\nStatus : {status}\nSTOCK:\n{sizes}"
+                dataus = f"⚠ PROSSIMO ACCESSO ESCLUSIVO : {title}\n{url}\n{img}\nStatus : {status}\nStock:\n{sizes}"
+    if dataus == 0:
+        dataus = "⚠ Nessun accesso esclusivo disponibile ⚠"
     return dataus
 
 def ea1():
     url  = "https://api.nike.com/product_feed/threads/v2/?anchor=1&count=100&filter=marketplace%28IT%29&filter=language%28it%29&filter=inStock%28false%29&filter=productInfo.merchPrice.discounted%28false%29&filter=channelId%28010794e5-35fe-4e32-aaff-cd2c74f89d61%29&filter=exclusiveAccess%28true%2Cfalse%29&fields=active&fields=id&fields=lastFetchTime&fields=productInfo&fields=publishedContent.nodes&fields=publishedContent.properties.coverCard&fields=publishedContent.properties.productCard&fields=publishedContent.properties.products&fields=publishedContent.properties.publish.collections&fields=publishedContent.properties.relatedThreads&fields=publishedContent.properties.seo&fields=publishedContent.properties.threadType&fields=publishedContent.properties.custom"
     items = []
     first = 0
+    data = 0
     sizes = ''
     html = rq.get(url=url, timeout=20, verify=False, headers=headers) # add proxies=proxy for enable proxy
     output = json.loads(html.text)
@@ -94,13 +98,16 @@ def ea1():
                         else:
                             if s['id'] == k['id']:
                                 sizes += '\n' + str(s['nikeSize']) + ': ' + str(k['level'])
-                data = f"⚠ ULTIMO EA CARICATO : {title}\n{url}\n{img}\nStatus : {status}\nSTOCK:\n{sizes}"
+                data = f"⚠ PROSSIMO ACCESSO ESCLUSIVO : {title}\n{url}\n{img}\nStatus : {status}\nStock:\n{sizes}"
+    if data == 0:
+        data = "⚠ Nessun accesso esclusivo disponibile ⚠"
     return data
 
 def ea2():
     url  = "https://api.nike.com/product_feed/threads/v2/?anchor=1&count=100&filter=marketplace%28IT%29&filter=language%28it%29&filter=inStock%28false%29&filter=productInfo.merchPrice.discounted%28false%29&filter=channelId%28010794e5-35fe-4e32-aaff-cd2c74f89d61%29&filter=exclusiveAccess%28true%2Cfalse%29&fields=active&fields=id&fields=lastFetchTime&fields=productInfo&fields=publishedContent.nodes&fields=publishedContent.properties.coverCard&fields=publishedContent.properties.productCard&fields=publishedContent.properties.products&fields=publishedContent.properties.publish.collections&fields=publishedContent.properties.relatedThreads&fields=publishedContent.properties.seo&fields=publishedContent.properties.threadType&fields=publishedContent.properties.custom"
     items = []
     first = 0
+    data = 0
     sizes = ''
     html = rq.get(url=url, timeout=20, verify=False, headers=headers) # add proxies=proxy for enable proxy
     output = json.loads(html.text)
@@ -128,12 +135,15 @@ def ea2():
                             else:
                                 if s['id'] == k['id']:
                                     sizes += '\n' + str(s['nikeSize']) + ': ' + str(k['level'])
-                data = f"⚠ ULTIMO EA CARICATO : {title}\n{url}\n{img}\nStatus : {status}\nSTOCK:\n{sizes}"
+                data = f"⚠ PROSSIMO ACCESSO ESCLUSIVO : {title}\n{url}\n{img}\nStatus : {status}\nStock:\n{sizes}"
+    if data == 0:
+        data = "⚠ Nessun accesso esclusivo disponibile ⚠"
     return data
 
 def ea3():
     url  = "https://api.nike.com/product_feed/threads/v2/?anchor=1&count=100&filter=marketplace%28IT%29&filter=language%28it%29&filter=inStock%28false%29&filter=productInfo.merchPrice.discounted%28false%29&filter=channelId%28010794e5-35fe-4e32-aaff-cd2c74f89d61%29&filter=exclusiveAccess%28true%2Cfalse%29&fields=active&fields=id&fields=lastFetchTime&fields=productInfo&fields=publishedContent.nodes&fields=publishedContent.properties.coverCard&fields=publishedContent.properties.productCard&fields=publishedContent.properties.products&fields=publishedContent.properties.publish.collections&fields=publishedContent.properties.relatedThreads&fields=publishedContent.properties.seo&fields=publishedContent.properties.threadType&fields=publishedContent.properties.custom"
     items = []
+    data = 0
     first = 0
     sizes = ''
     html = rq.get(url=url, timeout=20, verify=False, headers=headers) # add proxies=proxy for enable proxy
@@ -162,12 +172,15 @@ def ea3():
                             else:
                                 if s['id'] == k['id']:
                                     sizes += '\n' + str(s['nikeSize']) + ': ' + str(k['level'])
-                data = f"⚠ ULTIMO EA CARICATO : {title}\n{url}\n{img}\nStatus : {status}\nSTOCK:\n{sizes}"
+                data = f"⚠ PROSSIMO ACCESSO ESCLUSIVO : {title}\n{url}\n{img}\nStatus : {status}\nStock:\n{sizes}"
+    if data == 0:
+        data = "⚠ Nessun accesso esclusivo disponibile ⚠"
     return data
 
 def ea4():
     url  = "https://api.nike.com/product_feed/threads/v2/?anchor=1&count=100&filter=marketplace%28IT%29&filter=language%28it%29&filter=inStock%28false%29&filter=productInfo.merchPrice.discounted%28false%29&filter=channelId%28010794e5-35fe-4e32-aaff-cd2c74f89d61%29&filter=exclusiveAccess%28true%2Cfalse%29&fields=active&fields=id&fields=lastFetchTime&fields=productInfo&fields=publishedContent.nodes&fields=publishedContent.properties.coverCard&fields=publishedContent.properties.productCard&fields=publishedContent.properties.products&fields=publishedContent.properties.publish.collections&fields=publishedContent.properties.relatedThreads&fields=publishedContent.properties.seo&fields=publishedContent.properties.threadType&fields=publishedContent.properties.custom"
     items = []
+    data = 0
     first = 0
     sizes = ''
     html = rq.get(url=url, timeout=20, verify=False, headers=headers) # add proxies=proxy for enable proxy
@@ -196,12 +209,15 @@ def ea4():
                             else:
                                 if s['id'] == k['id']:
                                     sizes += '\n' + str(s['nikeSize']) + ': ' + str(k['level'])
-                data = f"⚠ ULTIMO EA CARICATO : {title}\n{url}\n{img}\nStatus : {status}\nSTOCK:\n{sizes}"
+                data = f"⚠ PROSSIMO ACCESSO ESCLUSIVO : {title}\n{url}\n{img}\nStatus : {status}\nStock:\n{sizes}"
+    if data == 0:
+        data = "⚠ Nessun accesso esclusivo disponibile ⚠"
     return data
 
 def ea5():
     url  = "https://api.nike.com/product_feed/threads/v2/?anchor=1&count=100&filter=marketplace%28IT%29&filter=language%28it%29&filter=inStock%28false%29&filter=productInfo.merchPrice.discounted%28false%29&filter=channelId%28010794e5-35fe-4e32-aaff-cd2c74f89d61%29&filter=exclusiveAccess%28true%2Cfalse%29&fields=active&fields=id&fields=lastFetchTime&fields=productInfo&fields=publishedContent.nodes&fields=publishedContent.properties.coverCard&fields=publishedContent.properties.productCard&fields=publishedContent.properties.products&fields=publishedContent.properties.publish.collections&fields=publishedContent.properties.relatedThreads&fields=publishedContent.properties.seo&fields=publishedContent.properties.threadType&fields=publishedContent.properties.custom"
     items = []
+    data = 0
     first = 0
     sizes = ''
     html = rq.get(url=url, timeout=20, verify=False, headers=headers) # add proxies=proxy for enable proxy
@@ -230,5 +246,7 @@ def ea5():
                             else:
                                 if s['id'] == k['id']:
                                     sizes += '\n' + str(s['nikeSize']) + ': ' + str(k['level'])
-                data = f"⚠ ULTIMO EA CARICATO : {title}\n{url}\n{img}\nStatus : {status}\nSTOCK:\n{sizes}"
+                data = f"⚠ PROSSIMO ACCESSO ESCLUSIVO : {title}\n{url}\n{img}\nStatus : {status}\nStock:\n{sizes}"
+    if data == 0:
+        data = "⚠ Nessun accesso esclusivo disponibile ⚠"
     return data
