@@ -10,7 +10,7 @@ def send_welcome(message):
 
 @bot.message_handler(commands=["help", "aiuto"])
 def handle_start_help(message):
-	bot.reply_to(message, "I comandi disponibili sono: \n ▪ /ea per visualizzare l'ultimo accesso esclusivo. \n ▪ /ea2 per visualizzare il secondo accesso esclusivo.\n ▪ /ea3 per visualizzare il terzo accesso esclusivo.\n ▪ /ea4 per visualizzare il quarto accesso esclusivo.\n ▪ /check per controllare lo stato del bot" )
+	bot.reply_to(message, "I comandi disponibili sono: \n ▪ /ea per visualizzare l'ultimo accesso esclusivo. \n ▪ /ea2 per visualizzare il secondo accesso esclusivo.\n ▪ /ea3 per visualizzare il terzo accesso esclusivo.\n ▪ /ea4 per visualizzare il quarto accesso esclusivo.\n ▪ /status per controllare lo stato del bot" )
 
 @bot.message_handler(commands=["ea", "esclusivo","e","1"])
 def handle_start_help(message):
